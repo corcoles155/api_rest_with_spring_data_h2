@@ -18,10 +18,6 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "profile_id", referencedColumnName = "id")
-    private Profile profile;
-
     public Integer getId() {
         return id;
     }
@@ -44,14 +40,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Profile getProfile() {
-        return profile;
-    }
-
-    public void setProfile(Profile profile) {
-        this.profile = profile;
     }
 
     @Override

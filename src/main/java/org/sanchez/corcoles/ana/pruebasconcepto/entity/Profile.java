@@ -18,6 +18,10 @@ public class Profile {
     @Column(name = "last_name")
     private String lastName;
 
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
     public Integer getId() {
         return id;
     }
@@ -40,6 +44,14 @@ public class Profile {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
